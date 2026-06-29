@@ -1,27 +1,48 @@
+# Trabajo final Angular — Gestión académica
 
+Sistema de gestión de alumnos y cursos desarrollado con Angular. Incluye autenticación, autorización por roles, estado global con NgRx y una suite de pruebas unitarias para las principales piezas de la aplicación.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+## Funcionalidades
 
-## Development server
+- Inicio de sesión y administración de sesión.
+- Protección de rutas mediante guards.
+- Permisos específicos para administradores.
+- Alta, edición y listado de alumnos.
+- Alta, edición, detalle y tarjetas de cursos.
+- Pipes personalizados para fechas y estados.
+- Manejo de autenticación y cursos con NgRx.
+- Página de inicio y manejo de rutas inexistentes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Stack
 
-## Code scaffolding
+- Angular 15
+- TypeScript
+- Angular Material y CDK
+- NgRx Store, Effects y DevTools
+- RxJS
+- Jasmine, Karma y Angular Testing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Arquitectura
 
-## Build
+El código se divide en módulos funcionales: `autenticacion`, `alumnos`, `cursos`, `core` y `shared`. Cada dominio contiene componentes, servicios, rutas y estado cuando corresponde. `core` concentra guards y servicios de sesión; `models` contiene las interfaces de negocio.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Ejecución local
 
-## Running unit tests
+```bash
+npm install
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Abrir `http://localhost:4200`.
 
-## Running end-to-end tests
+## Comandos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm run build
+npm run watch
+npm test
+```
 
-## Further help
+La configuración del entorno se encuentra en `src/environment/environment.ts`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Proyecto educativo orientado a demostrar routing modular, formularios, estado reactivo, permisos y testing en Angular.
